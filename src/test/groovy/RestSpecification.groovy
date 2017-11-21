@@ -8,7 +8,7 @@ class RestSpecification extends Specification {
 
     RESTClient restClient = new RESTClient("http://private-c6a51-apiarydemo8.apiary-mock.com")
 
-    def 'Check for a car with the license plate MOMMY '() {
+    def 'Check for a car with the license plate MOMMY'() {
         given:
         String licensePlate = "MOMMY"
 
