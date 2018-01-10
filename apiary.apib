@@ -1,0 +1,193 @@
+FORMAT: 1A
+HOST: https://chatbotservice-oow17demo.apaas.us6.oraclecloud.com
+
+
+# Used Car Purchase Chatbot APIs
+
+
+## Vehicle History [/history?plate={numberplate}]
+Provide the vehicle history of a specific car given its license plate changed
+### Get Vehicle History by Plate [GET]
+
++ Parameters
+    + numberplate (required, string)...
+   
++ Response 200 (application/json)
+
+        [
+           {
+                "id": 966635,
+                "price": 24999,
+                "color": "red",
+                "zipcode": 77008,
+                "city": "Houston",
+                "dealerName": "Fred Haas Toyota Country",
+                "owners": "Sally Smith",
+                "accidents": 0,
+                "odometer": 38290,
+                "serviceCount": 3,
+                "numberplate": "MOMMY1",
+                "make": "Toyota",
+                "model": "Sienna",
+                "version": "XLE",
+                "goodDeal": 21872,
+                "style": "Minivan",
+                "year": 2013,
+                "manufactured": "Japan",
+                "doors": 4
+            }
+        ]
+
+## Car Specs [/specification?plate={numberplate}]
+Provide the detailed vehicle specification of a car given its license plate
+### Search for Vehicle Specs by Plate [GET]
++ Parameters
+    + numberplate (required, string) ...  
+    
++ Response 200 (application/json)
+
+        [
+            {    
+                "make": "Toyota",
+                "model": "Sienna",
+                "version": "XLE",
+                "style": "Minivan",
+                "year": 2013,
+                "odometer": "55000"
+            }
+        ]
+
+
+## Purchase Recommendation [/purchaseRecommendation?plate={numberplate}]
+Provide the vehicle price and purchase recommendation of a specific car given its license plate
+### Get Purchase Recommendation by Plate [GET]
++ Parameters
+    + numberplate (required, string) ...  
+
++ Response 200 (application/json)
+
+        [
+           {            
+                "price": 24999,
+                "goodDeal": 21872
+            }
+        ]
+
+        
+## Nearby Vehicles [/getpricelist?mk={make}&mo={model}&zc={zipcode}]
+Provide locality specific vehicle price for a given a zip code given make/model
+### Find Similar Vehicles Nearby with 3 Parameters [GET]
++ Parameters
+    + make (required, string) ... 
+    + model (required, string) ... 
+    + zipcode (required, string) ... 
+   
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 966635,
+                "vin": "PI5P4NPMHD1GY34NH7JU1",
+                "price": 24999,
+                "color": "red",
+                "zipcode": 77008,
+                "city": "Houston",
+                "dealerName": "Fred Haas Toyota Country",
+                "owners": "Sally Smith",
+                "accidents": 0,
+                "odometer": 38290,
+                "serviceCount": 3,
+                "numberplate": "MOMMY1",
+                "make": "Toyota",
+                "model": "Sienna",
+                "version": "XLE",
+                "goodDeal": 21872,
+                "style": "Minivan",
+                "year": 2013,
+                "manufactured": "Japan",
+                "doors": 4
+            },
+                        {
+                "id": 556635,
+                "vin": "TUGP4NPMHD1GY34NH7JU1",
+                "price": 27859,
+                "color": "black",
+                "zipcode": 77008,
+                "city": "Houston",
+                "dealerName": "Toyota Dealers",
+                "owners": "John Goldsmith",
+                "accidents": 0,
+                "odometer": 14290,
+                "serviceCount": 3,
+                "numberplate": "FUNDAD",
+                "make": "Toyota",
+                "model": "Sienna",
+                "version": "XLE",
+                "goodDeal": 23872,
+                "style": "Minivan",
+                "year": 2013,
+                "manufactured": "Japan",
+                "doors": 4
+            }
+        ]
+
+
+
+## Nearby Vehicles [/getpricelist?mk={make}&mo={model}&zc={zipcode}&trim={version}&od={odometer}]
+Provide locality specific vehicle price for a given a zip code given make/model
+### Find Similar Vehicles Nearby with 5 Parameters [GET]
++ Parameters
+    + make (required, string) ... 
+    + model (required, string) ... 
+    + zipcode (required, string) ... 
+    + version (required, string) ... 
+    + odometer (required, string) ... 
+   
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 966635,
+                "vin": "PI5P4NPMHD1GY34NH7JU1",
+                "price": 24999,
+                "color": "red",
+                "zipcode": 77008,
+                "city": "Houston",
+                "dealerName": "Fred Haas Toyota Country",
+                "owners": "Sally Smith",
+                "accidents": 0,
+                "odometer": 38290,
+                "serviceCount": 3,
+                "numberplate": "MOMMY1",
+                "make": "Toyota",
+                "model": "Sienna",
+                "version": "XLE",
+                "goodDeal": 21872,
+                "style": "Minivan",
+                "year": 2013,
+                "manufactured": "Japan",
+                "doors": 4
+            },
+                        {
+                "id": 556635,
+                "vin": "TUGP4NPMHD1GY34NH7JU1",
+                "price": 27859,
+                "color": "black",
+                "zipcode": 77008,
+                "city": "Houston",
+                "dealerName": "Toyota Dealers",
+                "owners": "John Goldsmith",
+                "accidents": 0,
+                "odometer": 14290,
+                "serviceCount": 3,
+                "numberplate": "FUNDAD2",
+                "make": "Toyota",
+                "model": "Sienna",
+                "version": "XLE",
+                "goodDeal": 23872,
+                "style": "Minivan",
+                "year": 2013,
+                "manufactured": "Japan",
+                "doors": 4
+            }
+        ]
